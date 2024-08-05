@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "product"
+    "displayName": "product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,15 @@
       "type": "string"
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "price": {
       "type": "decimal"
@@ -42,8 +44,20 @@
     "releaseDate": {
       "type": "datetime"
     },
-    "state": {
-      "type": "string"
+    "systemRequirements": {
+      "type": "json"
+    },
+    "states": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::state.state",
+      "mappedBy": "products"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "products"
     }
   }
 }
