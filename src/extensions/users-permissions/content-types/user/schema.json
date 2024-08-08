@@ -66,6 +66,17 @@
       "configurable": false
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "mainImg": {
       "allowedTypes": [
         "images",
         "files",
